@@ -20,8 +20,10 @@ if (!defined('ABSPATH')) {
  */
 function atenatech_change_login_logo_init() {
   require_once("includes/class-atenatech-change-login-logo.php");
-  AtenaTech_Change_Login_Logo::init();
+  $objAtenaTechChangeLogin = new AtenaTech_Change_Login_Logo();
+  $objAtenaTechChangeLogin->init();
 }
-add_action( "wp_enqueue_scripts", "atenatech_change_login_logo_init");
+add_action( "login_head", "atenatech_change_login_logo_init");
+
 
 ?>
